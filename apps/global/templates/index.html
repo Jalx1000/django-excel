@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="{% static 'assets/isotipo.svg' %}"
+      type="image/svg+xml"
+    />
+    <title>DING</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+  </head>
+
+  <body class="bg-[#EBF1F6] px-10">
+    <div
+      class="flex flex-col justify-center items-center h-screen font-bold text-8xl"
+    >
+      <p>INDEX</p>
+      <button class="hover:bg-gray-700 rounded-xl py-5 px-10 hover:text-white mt-10 ">
+        <a href="{% url 'login' %}">Logueate </a>
+      </button>
+    </div>
+  </body>
+</html>

@@ -20,6 +20,7 @@ from django.conf.urls import handler404
 from . import views
 
 urlpatterns = [
+    path("", include("apps.global.urls")),
     path('admin/', admin.site.urls),
     path("login/", include("apps.login.urls")),
     path("dashboard/", include("apps.dashboard.urls")),
