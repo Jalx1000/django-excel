@@ -1,0 +1,20 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{% static 'assets/isotipo.svg' %}" type="image/svg+xml" />
+    <title>Dashboard | DING</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+  </head>
+
+  <body class="bg-[#EBF1F6] px-10">
+    {% comment %} {% include 'partials/navbar.html' %} {% endcomment %}
+
+    <div class=" ">{% block content %} {% endblock %}</div>
+  </body>
+</html>

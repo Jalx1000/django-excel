@@ -1,0 +1,105 @@
+{% extends 'layout__dashboard.html' %} {% block content%} {% load static %}
+
+<div class="mt-20">
+  <header class="flex justify-between">
+    <h1 class="text-3xl font-bold">Dashboard - Admin App</h1>
+    <button
+      class="bg-[#00D96E] px-6 py-2 text-white font-semibold rounded-full hover:bg-[#079963]"
+    >
+      + Añadir
+    </button>
+  </header>
+  <div class="border-transparent border-2 border-b-gray-400">
+    <ul class="flex py-5">
+      <li class="hover:text-[#079963] cursor-pointer mr-5 text-2xl">Cursos</li>
+      <li class="hover:text-[#079963] cursor-pointer mr-5 text-2xl">
+        Clientes
+      </li>
+      <li class="hover:text-[#079963] cursor-pointer mr-5 text-2xl">Otros</li>
+    </ul>
+  </div>
+
+  <div class="mt-10">
+    <form class="flex" action="" method="post">
+      <input
+        class="outline-none focus:outline-[#079963] py-2 pl-4 rounded-full mr-5"
+        placeholder="Buscar cliente"
+        type="text"
+        name="search"
+        value=""
+      />
+      <select
+        class="outline-none focus:outline-[#079963] text-gray-400 rounded-full px-5 mr-5 flex justify-center items-center"
+        name="select"
+      >
+        <option value="value1">Categorias</option>
+        <option value="value2">Value 2</option>
+        <option value="value3">Value 3</option>
+      </select>
+      <button
+        class="bg-gray-500 hover:bg-gray-700 px-6 py-2 text-white font-semibold rounded-full"
+      >
+        Buscar
+      </button>
+    </form>
+  </div>
+
+  <table class="mt-10 max-h-[490px]">
+    <thead class="">
+      <tr class="">
+        <th>Nro</th>
+        <th>Nombre y apellido</th>
+        <th>Interes</th>
+        <th>Email</th>
+        <th>Telefono</th>
+        <th>Ciudad</th>
+        <th>Estado</th>
+        <th class="p-0">Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody class="">
+      {% for Person in persons %}
+      <tr class="">
+        <td class="">{{Person.id}}</td>
+        <td class="">{{Person.nombreCompleto}}</td>
+        <td class="">{{Person.interes}}</td>
+        <td class="">{{Person.email}}</td>
+        <td class="">{{Person.telefono}}</td>
+        <td class="">{{Person.ciudad}}</td>
+        <td class="">{{Person.eliminado}}</td>
+        <td class="flex justify-center p-0 py-2 m-0">
+          <a class="mr-3" href="#">Editar</a>
+          <form action="" method="">
+            <input type="hidden" name="delete" />
+            <button>Eliminar</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+
+    <tfoot class="fixed right-10 bottom-14">
+      <tr class="w-full">
+        <td colspan="8">
+          <nav class="flex justify-end items-center rounded-full">
+            <ul class="flex">
+              <li class="p-2 bg-gray-300 hover:bg-gray-400 rounded-l-xl">
+                &lt;&lt;
+              </li>
+              <li class="p-2 bg-gray-300 hover:bg-gray-400">&lt;</li>
+              <li class="p-2 px-4 bg-[#00D96E]">1</li>
+              <li class="p-2 bg-gray-300 hover:bg-gray-400">&gt;</li>
+              <li class="p-2 bg-gray-300 hover:bg-gray-400 rounded-r-xl">
+                &gt;&gt;
+              </li>
+            </ul>
+          </nav>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div></div>
+</div>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'layout.html' %} {% block content %} {% load static %}
+{% comment %} ../../core/templates/ {% endcomment %}
+<section class="drop-shadow-2xl flex justify-center items-center h-screen">
+  {% comment %}
+
+  <div id="box2" class="flex flex-col items-center justify-content-center">
+    <a href="#">
+      <img
+        src="https://cognosnovedades.com/mailings/2022/html/masivo/EXCEL/cognos.png"
+        width="200"
+        alt=""
+      />
+    </a>
+    <form class="flex flex-col" action="./Controllers/login.php" method="POST">
+      <label for="user"> Nombre </label>
+      <input
+        name="user"
+        type="text"
+        class="passw"
+        required
+        placeholder="User"
+      />
+      <label for="pass"> Contraseña</label>
+      <input
+        name="passwd"
+        required
+        class="passw"
+        type="password"
+        placeholder="Pass"
+      />
+      <input type="submit" class="py-5 px-10 bg-" value="INGRESAR" />
+    </form>
+  </div>
+  {% endcomment %}
+  <div
+    class="bg-white w-[427px] flex flex-col justify-center items-center rounded-[40px] py-10 px-10"
+  >
+    <a href="#" class="mb-10">
+      <img src="{% static 'assets/Logotipo.svg' %}" width="200" alt="" />
+    </a>
+
+    <div class="flex justify-around w-full py-3 px-5 rounded-xl bg-gray-300">
+      <button
+        class="py-3 w-[50%] rounded-xl mr-2 bg-gray-500 font-semibold hover:font-bold action-checkbox text-white"
+      >
+        Iniciar Sesion
+      </button>
+      <button class="ml-2 w-[50%]">Sign Up</button>
+    </div>
+
+    <div class="w-full">
+      <div class="my-5 text-center">
+        <h3 class="text-4xl font-bold text-[#323232]">Bienvenido,</h3>
+        <p class="text-xl text-{#A0A0A0} font-semibold">
+          Ingresa para continuar!
+        </p>
+      </div>
+      <form
+        class="flex flex-col"
+        action="./Controllers/login.php"
+        method="POST"
+      >
+        <label for="user">Nombre </label>
+        <input
+          name="user"
+          type="text"
+          class="passw pl-2 outline-0 py-2 focus:outline-1 focus:outline-[#D1D5D8]"
+          required
+          placeholder="User"
+        />
+        <label for="pass">Contraseña</label>
+        <input
+          name="passwd"
+          required
+          class="passw pl-2 outline-0 py-2 focus:outline-1 focus:outline-[#D1D5D8]"
+          type="password"
+          placeholder="Pass"
+        />
+        <input
+          type="submit"
+          required  
+          class="py-2 my-4 px-10 bg-[#7FCB67] text-white font-semibold rounded-xl"
+          value="INGRESAR"
+        />
+      </form>
+
+      <p class="text-center py-5 font-bold">O</p>
+
+      <div class="flex flex-col text-center">
+        <button class="outline-4 hover:bg-[#D1D5DB] rounded-xl py-3 mb-2">
+          <a class="font-semibold">Continua con Google</a>
+        </button>
+        <button class="outline-4 hover:bg-[#D1D5DB] rounded-xl py-3">
+          <a class="font-semibold">Continua con Facebook</a>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} {% block modal_content %} {% endcomment %}
+<!-- Contenido para el bloque "modal_content" en modal.html -->
+{% comment %} {% endblock %} {% endcomment %} 
+{% endblock %}
